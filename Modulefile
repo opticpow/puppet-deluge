@@ -1,6 +1,6 @@
 name 'opticpow-deluge'
-version '1.0.0'
-
+version '1.0.1'
+dependency 'rodjek/logrotate', '1.x'
 author 'Wayne Ingram'
 license 'MIT'
 project_page 'https://github.com/opticpow/puppet-deluge'
