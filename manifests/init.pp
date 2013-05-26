@@ -67,10 +67,10 @@ class deluge {
         rotate        => 4,
         rotate_every  => week,
         sharedscripts => true,
-        missingok => true,
+        missingok     => true,
         delaycompress => true,
-        ifempty    => false,
-        compress     => true,
+        ifempty       => false,
+        compress      => true,
         postrotate    => 'initctl restart deluged ; initctl restart deluge-web';
     }
 }
