@@ -28,18 +28,20 @@ class deluge {
 
     file {
         '/etc/init/deluged.conf':
-            ensure => file,
-            mode   => '0644',
-            owner  => root,
-            group  => root,
-            source => 'puppet:///modules/deluge/deluged.conf';
+            ensure  => file,
+            mode    => '0644',
+            owner   => root,
+            group   => root,
+            source  => 'puppet:///modules/deluge/deluged.conf',
+            require => [Package['deluged'], User['deluge']];
 
         '/etc/init/deluge-web.conf':
-            ensure => file,
-            mode   => '0644',
-            owner  => root,
-            group  => root,
-            source => 'puppet:///modules/deluge/deluge-web.conf';
+            ensure  => file,
+            mode    => '0644',
+            owner   => root,
+            group   => root,
+            source  => 'puppet:///modules/deluge/deluge-web.conf',
+            require => [Package['deluge-web'], User['deluge']];
 
         '/var/log/deluge':
             ensure => directory,
